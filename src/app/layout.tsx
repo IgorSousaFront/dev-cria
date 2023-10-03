@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={robotoCondensed.className}>
+      <body className={`${robotoCondensed.className} bg-purple-base`}>
         <Header />
         {children}
       </body>
