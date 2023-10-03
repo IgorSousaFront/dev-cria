@@ -1,3 +1,5 @@
+'use client'
+
 // Components
 import { Container } from "@/components/Container"
 import { SocialIcon, ISocialIconsProps } from "@/components/SocialIcon"
@@ -38,9 +40,9 @@ export const Hero = () => {
             e sou dev!
           </h1>
           <p className="text-white text-3xl mb-7">Há 8 anos desenvolvendo interfaces <br /> para projetos incríveis!</p>
-          <div className="flex items-center justify-start">
-            <Button>Projetos</Button>
-            <Button>Baixe meu curriculo</Button>
+          <div className="flex items-center justify-start gap-4">
+            <Button onClick={() => console.log('PROJETOS')}>Projetos</Button>
+            <Button onClick={() => console.log('CURRICULO')} type="light">Baixe meu curriculo</Button>
           </div>
         </div>
         <Image className="mix-blend-hard-light" src="/banner__image.png" alt="Imagem do desenvolvedor" width={570} height={583}/>
