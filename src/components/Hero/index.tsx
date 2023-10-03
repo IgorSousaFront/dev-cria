@@ -1,6 +1,9 @@
 // Components
 import { Container } from "@/components/Container"
 import { SocialIcon, ISocialIconsProps } from "@/components/SocialIcon"
+import { Button } from "@/components/Button";
+
+// Next
 import Image from "next/image";
 
 // Icons
@@ -35,6 +38,10 @@ export const Hero = () => {
             e sou dev!
           </h1>
           <p className="text-white text-3xl mb-7">Há 8 anos desenvolvendo interfaces <br /> para projetos incríveis!</p>
+          <div className="flex items-center justify-start">
+            <Button>Projetos</Button>
+            <Button>Baixe meu curriculo</Button>
+          </div>
         </div>
         <Image className="mix-blend-hard-light" src="/banner__image.png" alt="Imagem do desenvolvedor" width={570} height={583}/>
       </div>
