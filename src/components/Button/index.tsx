@@ -21,7 +21,7 @@ export const Button = ({children, onClick, type = 'primary'}: IButtonProps) => {
   }
 
   return (
-    <button onClick={onClick && onClick} className={`rounded-full py-2 px-8 border-[3px] border-solid ${setType(type)}`}>
+    <button onClick={onClick && onClick} className={`rounded-full py-2 px-8 border-[3px] border-solid uppercase ${setType(type)}`}>
       {children}
     </button>
   )
