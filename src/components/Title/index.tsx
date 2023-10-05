@@ -10,10 +10,10 @@ export const SectionTitle = ({children, color = 'light'}: ISectionTitleProps) =>
   const getColor = (type: 'light' | 'primary') => {
     switch(type) {
       case 'primary': {
-        return 'text-blue-primary dark:text-dark-font'
+        return 'text-font-light dark:text-white'
       }
       case 'light': {
-        return 'text-white'
+        return 'text-font-light dark:text-white'
       }
     }
   }

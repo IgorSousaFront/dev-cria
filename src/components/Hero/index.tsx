@@ -57,12 +57,12 @@ export const Hero = () => {
           {socialListItems.map((social, index) => (
             <SocialIcon key={index} icon={social.icon} link={social.link} />
           ))}
-          <h1 className="my-6 font-bold text-[40px] md:text-5xl text-white">
+          <h1 className="my-6 font-bold text-[40px] md:text-5xl text-font-light dark:text-white">
             Olá, me chamo <br />
-            <span className="text-blue-primary">Igor Sousa </span>
+            <span className="text-primary">Igor Sousa </span>
             e sou dev!
           </h1>
-          <p className="text-white text-xl md:text-3xl mb-7">Há 8 anos desenvolvendo interfaces <br /> para projetos incríveis!</p>
+          <p className="text-xl md:text-3xl mb-7 text-font-light dark:text-white">Há 8 anos desenvolvendo interfaces <br /> para projetos incríveis!</p>
           <div className="flex items-center flex-col sm:flex-row justify-start gap-4 sm:w-3/4 lg:w-full">
             <Button onClick={() => router.push('/#projetos')}>Projetos</Button>
             <Button onClick={toggleModal} type="outlined" color="light">Baixe meu curriculo</Button>

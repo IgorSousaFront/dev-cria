@@ -9,9 +9,6 @@ import { ToggleTheme } from "../ToggleTheme"
 // Next
 import Link from "next/link"
 
-import { useTheme } from "next-themes"
-import { useEffect } from "react"
-
 interface INavList {
   label: string
   url: string
@@ -36,7 +33,7 @@ export const Header = () => {
   return (
     <Container>
       <header className="flex items-center justify-between py-5 md:py-8">
-        <div className="text-2xl md:text-3xl font-bold text-white">
+        <div className="text-2xl md:text-3xl font-bold text-font-light dark:text-white">
           @DEV_CRIA
         </div>
 
@@ -46,7 +43,7 @@ export const Header = () => {
               <li key={index}>
                 <Link
                   href={item.url}
-                  className="text-white text-xl uppercase"
+                  className="text-font-light dark:text-white text-xl uppercase"
                 >
                   {item.label}
                 </Link>

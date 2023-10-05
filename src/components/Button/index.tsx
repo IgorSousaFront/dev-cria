@@ -18,12 +18,12 @@ export const Button = ({
   const setType = () => {
     if(type === 'outlined') {
       if(color === 'primary') {
-        return 'bg-none text-blue-primary border-blue-primary'
+        return 'bg-none text-primary border-primary'
       } else if(color === 'light') {
-        return 'bg-none text-white border-white'
+        return 'bg-none text-font-light dark:text-white border-font-light dark:border-white'
       }
     } else if(type === 'filled') {
-      return 'bg-blue-primary text-white border-blue-primary'
+      return 'bg-primary text-white border-primary'
     }
   }
 

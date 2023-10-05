@@ -11,6 +11,7 @@ import { Button } from "../Button"
 
 // Contexts
 import { ModalContext } from "@/contexts/modal-context"
+import { useTheme } from "next-themes"
 
 const skillList: ISkillLoaderProps[] = [
   {
@@ -49,6 +50,8 @@ const skillList: ISkillLoaderProps[] = [
 
 export const Skills = () => {
   const { toggleVisibility: toggleModal } = useContext(ModalContext)
+  const { theme } = useTheme()
+
 
   return (
     <section id="habilidades" className="w-auto mx-5 md:w-[95vw] py-11 md:mx-auto bg-white dark:bg-dark-bg shadow-lg">
@@ -62,7 +65,7 @@ export const Skills = () => {
           ))}
         </div>
         <div className="flex items-center justify-center pt-14 w-full md:w-60 mx-auto">
-          <Button onClick={toggleModal} type="outlined">Baixe meu curriculo</Button>
+          <Button onClick={toggleModal} type={theme === 'light' ? 'outlined' : 'filled'}>Baixe meu curriculo</Button>
         </div>
       </Container>
     </section>

@@ -21,13 +21,13 @@ export const ProjectCard = ({name, thumb, description, technologies, link, isAct
       </div>
       <div className="flex flex-col justify-between md:h-[251px]">
         <div>
-          <p className="text-blue-primary font-bold mb-5 text-3xl text-center md:text-left">{name}</p>
-          <p className="text-black hidden md:block dark:text-dark-font">{description}</p>
+          <p className="text-font-light dark:text-white font-bold mb-5 text-3xl text-center md:text-left">{name}</p>
+          <p className="text-font-light hidden md:block dark:text-white">{description}</p>
         </div>
         <div className="flex items-end justify-between">
           <div className="hidden md:flex">
             {technologies.map((item, index) => (
-              <p key={index} className="bg-light-green rounded-full text-white py-[2px] px-5 mr-2">{item}</p>
+              <p key={index} className="bg-font-light dark:bg-dark-base rounded-full text-white dar:text-primary py-[2px] px-5 mr-2">{item}</p>
             ))}
           </div>
           <div className="w-full sm:w-40">
