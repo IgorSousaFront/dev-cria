@@ -19,6 +19,6 @@ export const SectionTitle = ({children, color = 'light'}: ISectionTitleProps) =>
   }
 
   return (
-    <h2 className={`text-center mb-14 font-bold text-5xl ${getColor(color)}`}>{children}</h2>
+    <h2 className={`text-center mb-14 font-bold text-4xl md:text-5xl ${getColor(color)}`}>{children}</h2>
   )
 }

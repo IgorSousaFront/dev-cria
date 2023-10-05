@@ -4,24 +4,31 @@ import { ReactNode } from "react"
 interface IButtonProps {
   children: ReactNode
   onClick?: () => void
-  type?: 'primary' | 'light'
+  type?: 'filled' | 'outlined'
+  color?: 'primary' | 'light'
 }
 
-export const Button = ({children, onClick, type = 'primary'}: IButtonProps) => {
+export const Button = ({
+  children,
+  onClick,
+  type = 'filled',
+  color = 'primary'
+}: IButtonProps) => {
 
-  const setType = (type: string) => {
-    switch(type) {
-      case 'primary': {
-        return 'bg-blue-primary border-blue-primary'
+  const setType = () => {
+    if(type === 'outlined') {
+      if(color === 'primary') {
+        return 'bg-none text-blue-primary border-blue-primary'
+      } else if(color === 'light') {
+        return 'bg-none text-white border-white'
       }
-      case 'light': {
-        return 'bg-none border-light-gray'
-      }
+    } else if(type === 'filled') {
+      return 'bg-blue-primary text-white border-blue-primary'
     }
   }
 
   return (
-    <button onClick={onClick && onClick} className={`rounded-full py-2 px-8 border-[3px] border-solid uppercase ${setType(type)}`}>
+    <button onClick={onClick && onClick} className={`w-full rounded-full py-2 px-8 border-[3px] border-solid uppercase ${setType()}`}>
       {children}
     </button>
   )

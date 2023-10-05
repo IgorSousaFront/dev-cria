@@ -47,14 +47,25 @@ const projectList: IProjectCardProps[] = [
 
 export const Projects = () => {
   return (
-    <section className="py-11 overflow-hidden">
+    <section className="py-11 overflow-hidden mt-8 md:mt-0" id="projetos">
       <SectionTitle color="light">Projetos</SectionTitle>
-      <div className="-mx-28">
+      <div className="mx-4 lg:-mx-5">
         <Swiper
           spaceBetween={60}
-          slidesPerView={3}
+          slidesPerView={1}
           centeredSlides
           loop
+          breakpoints={{
+            1024: {
+              slidesPerView: 1.5
+            },
+            1280: {
+              slidesPerView: 2
+            },
+            1400: {
+              slidesPerView: 2.5
+            },
+          }}
         >
           {projectList.map((project, index) => (
             <SwiperSlide key={index} className="w-[767px]">

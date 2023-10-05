@@ -29,23 +29,23 @@ const socialListItems: ISocialIconsProps[] = [
 export const Hero = () => {
   return (
     <Container>
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="md:flex items-center justify-between">
+        <div className="my-16 lg:my-0 md:w-full lg:w-2/4">
           {socialListItems.map((social, index) => (
             <SocialIcon key={index} icon={social.icon} link={social.link} />
           ))}
-          <h1 className="my-6 font-bold text-5xl text-white">
+          <h1 className="my-6 font-bold text-[40px] md:text-5xl text-white">
             Olá, me chamo <br />
             <span className="text-blue-primary">Igor Sousa </span>
             e sou dev!
           </h1>
-          <p className="text-white text-3xl mb-7">Há 8 anos desenvolvendo interfaces <br /> para projetos incríveis!</p>
-          <div className="flex items-center justify-start gap-4">
+          <p className="text-white text-xl md:text-3xl mb-7">Há 8 anos desenvolvendo interfaces <br /> para projetos incríveis!</p>
+          <div className="flex items-center flex-col sm:flex-row justify-start gap-4 sm:w-3/4 lg:w-full">
             <Button onClick={() => console.log('PROJETOS')}>Projetos</Button>
-            <Button onClick={() => console.log('CURRICULO')} type="light">Baixe meu curriculo</Button>
+            <Button onClick={() => console.log('CURRICULO')} type="outlined" color="light">Baixe meu curriculo</Button>
           </div>
         </div>
-        <Image className="mix-blend-hard-light" src="/banner__image.png" alt="Imagem do desenvolvedor" width={570} height={583}/>
+        <Image className="mix-blend-hard-light hidden lg:block" src="/banner__image.png" alt="Imagem do desenvolvedor" width={500} height={583}/>
       </div>
     </Container>
   )

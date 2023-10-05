@@ -1,5 +1,6 @@
 // Components
 import { Container } from "@/components/Container"
+import Image from "next/image"
 import Link from "next/link"
 
 interface INavList {
@@ -25,12 +26,12 @@ const navList:INavList[] = [
 export const Header = () => {
   return (
     <Container>
-      <header className="flex items-center justify-between py-8">
-        <div className="text-3xl font-bold text-white">
+      <header className="flex items-center justify-between py-5 md:py-8">
+        <div className="text-2xl md:text-3xl font-bold text-white">
           @DEV_CRIA
         </div>
 
-        <nav>
+        <nav className="hidden md:block">
           <ul>
             {navList.map((item, index) => (
               <Link
