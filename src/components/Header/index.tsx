@@ -41,15 +41,16 @@ export const Header = () => {
         </div>
 
         <nav className="hidden md:block">
-          <ul>
+          <ul className='flex gap-8'>
             {navList.map((item, index) => (
-              <Link
-                key={index}
-                href={item.url}
-                className="text-white text-xl uppercase ml-8"
-              >
-                {item.label}
-              </Link>
+              <li key={index}>
+                <Link
+                  href={item.url}
+                  className="text-white text-xl uppercase"
+                >
+                  {item.label}
+                </Link>
+              </li>
             ))}
           </ul>
         </nav>
