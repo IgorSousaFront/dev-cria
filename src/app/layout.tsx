@@ -13,6 +13,7 @@ import { Header } from '@/components/Header'
 
 // Contexts
 import { ModalProvider } from "@/contexts/modal-context"
+import { ThemeProvider } from '@/contexts/theme-context'
 
 const robotoCondensed = Roboto_Condensed({ weight: ['300', '400', '700'], subsets: ['latin'] })
 
@@ -29,9 +30,11 @@ export default function RootLayout({
   return (
     <ModalProvider>
       <html lang="en">
-        <body className={`${robotoCondensed.className} bg-purple-base`}>
-          <Header />
-          {children}
+        <body className={`${robotoCondensed.className} bg-purple-base dark:bg-dark-purple-base`}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Header />
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ModalProvider>

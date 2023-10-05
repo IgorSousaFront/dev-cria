@@ -51,7 +51,7 @@ export const Skills = () => {
   const { toggleVisibility: toggleModal } = useContext(ModalContext)
 
   return (
-    <section id="habilidades" className="w-auto mx-5 md:w-[95vw] py-11 md:mx-auto bg-white shadow-lg">
+    <section id="habilidades" className="w-auto mx-5 md:w-[95vw] py-11 md:mx-auto bg-white dark:bg-dark-bg shadow-lg">
       <Container>
         <SectionTitle color="primary">Habilidades</SectionTitle>
         <div className="flex gap-y-5 flex-wrap">

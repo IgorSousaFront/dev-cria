@@ -1,5 +1,5 @@
 'use client'
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 
 // Components
 import { Container } from "@/components/Container"
@@ -19,6 +19,8 @@ import { HiOutlineDocumentDownload } from 'react-icons/hi'
 // Contexts
 import { ModalContext } from "@/contexts/modal-context"
 
+import { useTheme } from "next-themes"
+
 const socialListItems: ISocialIconsProps[] = [
   {
     icon: <FaLinkedin />,
@@ -37,6 +39,16 @@ const socialListItems: ISocialIconsProps[] = [
 export const Hero = () => {
   const router = useRouter()
   const { isOpen: isModalOpen, toggleVisibility: toggleModal } = useContext(ModalContext)
+  const [heroImage, setHeroImage] = useState<string | undefined>(undefined)
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    if(theme === 'light') {
+      setHeroImage('/banner__image.png')
+    } else {
+      setHeroImage('/banner__image-dark.png')
+    }
+  }, [theme])
 
   return (
     <Container>
@@ -56,7 +68,17 @@ export const Hero = () => {
             <Button onClick={toggleModal} type="outlined" color="light">Baixe meu curriculo</Button>
           </div>
         </div>
-        <Image className="mix-blend-hard-light hidden lg:block" src="/banner__image.png" alt="Imagem do desenvolvedor" width={500} height={583}/>
+        {heroImage ? (
+          <Image
+            className="mix-blend-luminosity hidden lg:block"
+            src={heroImage}
+            alt="Imagem do desenvolvedor"
+            width={500}
+            height={583}
+          />
+        ) : (
+          <div className="h-[511px] w-[500px] hidden lg:block"></div>
+        )}
       </div>
       <Modal isOpen={isModalOpen}>
         <SectionTitle color="primary">Baixe meu currículo</SectionTitle>

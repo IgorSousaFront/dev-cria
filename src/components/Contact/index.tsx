@@ -10,7 +10,7 @@ export const Contact = () => {
   const router = useRouter()
 
   return (
-    <section className="bg-white pt-6 pb-8 mb-8" id="contato">
+    <section className="bg-white dark:bg-dark-bg pt-6 pb-8 mb-8" id="contato">
       <Container>
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <h3 className="text-blue-primary font-bold text-[45px] leading-none md:text-5xl mb-9 lg:mb-0">

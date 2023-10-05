@@ -1,7 +1,16 @@
+'use client'
+
+import { useState } from 'react'
+
 // Components
 import { Container } from "@/components/Container"
-import Image from "next/image"
+import { ToggleTheme } from "../ToggleTheme"
+
+// Next
 import Link from "next/link"
+
+import { useTheme } from "next-themes"
+import { useEffect } from "react"
 
 interface INavList {
   label: string
@@ -23,7 +32,7 @@ const navList:INavList[] = [
   },
 ]
 
-export const Header = () => {
+export const Header = () => {  
   return (
     <Container>
       <header className="flex items-center justify-between py-5 md:py-8">
@@ -44,6 +53,7 @@ export const Header = () => {
             ))}
           </ul>
         </nav>
+        <ToggleTheme />
       </header>
     </Container>
   )
