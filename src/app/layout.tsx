@@ -1,11 +1,18 @@
+// React
+import React, { useContext } from 'react'
+
+// Styles
 import './globals.css'
-// Import Swiper styles
 import 'swiper/css'
 
 import type { Metadata } from 'next'
 import { Roboto_Condensed } from 'next/font/google'
 
+// Components
 import { Header } from '@/components/Header'
+
+// Contexts
+import { ModalProvider } from "@/contexts/modal-context"
 
 const robotoCondensed = Roboto_Condensed({ weight: ['300', '400', '700'], subsets: ['latin'] })
 
@@ -20,11 +27,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${robotoCondensed.className} bg-purple-base`}>
-        <Header />
-        {children}
-      </body>
-    </html>
+    <ModalProvider>
+      <html lang="en">
+        <body className={`${robotoCondensed.className} bg-purple-base`}>
+          <Header />
+          {children}
+        </body>
+      </html>
+    </ModalProvider>
   )
 }

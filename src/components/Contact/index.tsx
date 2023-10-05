@@ -1,10 +1,14 @@
 'use client'
+// React
+import { useRouter } from "next/navigation"
 
 // Components
 import { Button } from "../Button"
 import { Container } from "../Container"
 
 export const Contact = () => {
+  const router = useRouter()
+
   return (
     <section className="bg-white pt-6 pb-8 mb-8" id="contato">
       <Container>
@@ -14,8 +18,8 @@ export const Contact = () => {
             através de <span className="text-light-green">email</span> ou <span className="text-light-green">whatsapp</span>
           </h3>
           <div className="w-full md:w-auto flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <Button onClick={() => console.log('Email')}><span className="text-2xl">E-mail</span></Button>
-            <Button onClick={() => console.log('Whatsapp')} type="outlined"><span className="text-2xl">Whatsapp</span></Button>
+            <Button onClick={() => router.push('mailto:igor.ssqwe@gmail.com')}><span className="text-2xl">E-mail</span></Button>
+            <Button onClick={() => window.open('https://wa.me/55985706621', '_blank')} type="outlined"><span className="text-2xl">Whatsapp</span></Button>
           </div>
         </div>
       </Container>

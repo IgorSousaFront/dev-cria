@@ -1,4 +1,7 @@
+// Next
 import Image from "next/image"
+
+// Components
 import { Button } from "../Button"
 
 export interface IProjectCardProps {
@@ -28,7 +31,7 @@ export const ProjectCard = ({name, thumb, description, technologies, link, isAct
             ))}
           </div>
           <div className="w-full sm:w-40">
-            <Button onClick={() => console.log(link)}>Visitar site</Button>
+            <Button onClick={() => window.open(link, '_ blank')}>Visitar site</Button>
           </div>
         </div>
       </div>

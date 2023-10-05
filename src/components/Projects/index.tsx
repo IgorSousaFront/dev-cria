@@ -20,7 +20,7 @@ const projectList: IProjectCardProps[] = [
     description: "O Laboratório de Patologia Animal SANIMAL foi fundado em 2000, por iniciativa do Médico Veterinário João de Brito Neto, e tem por finalidade atuar nas mais diferentes áreas de diagnóstico para trazer aos nossos clientes",
     thumb: "/project-02.png",
     technologies: ['Vue.js', 'Wordpress'],
-    link: 'https://www.libercard.com.br/'
+    link: 'https://labsanimal.com.br/site/'
   },
   {
     name: "Libercard Homepage",
@@ -34,14 +34,14 @@ const projectList: IProjectCardProps[] = [
     description: "O Laboratório de Patologia Animal SANIMAL foi fundado em 2000, por iniciativa do Médico Veterinário João de Brito Neto, e tem por finalidade atuar nas mais diferentes áreas de diagnóstico para trazer aos nossos clientes",
     thumb: "/project-02.png",
     technologies: ['Vue.js', 'Wordpress'],
-    link: 'https://www.libercard.com.br/'
+    link: 'https://labsanimal.com.br/site/'
   },
   {
     name: "LabsAnimal Homepage",
     description: "O Laboratório de Patologia Animal SANIMAL foi fundado em 2000, por iniciativa do Médico Veterinário João de Brito Neto, e tem por finalidade atuar nas mais diferentes áreas de diagnóstico para trazer aos nossos clientes",
     thumb: "/project-02.png",
     technologies: ['Vue.js', 'Wordpress'],
-    link: 'https://www.libercard.com.br/'
+    link: 'https://labsanimal.com.br/site/'
   },
 ]
 
@@ -62,7 +62,7 @@ export const Projects = () => {
             1280: {
               slidesPerView: 2
             },
-            1400: {
+            1536: {
               slidesPerView: 2.5
             },
           }}

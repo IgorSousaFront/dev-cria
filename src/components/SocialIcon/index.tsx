@@ -9,7 +9,7 @@ export interface ISocialIconsProps {
 
 export const SocialIcon = ({icon, link}: ISocialIconsProps) => {
   return (
-    <Link href={link} className="w-9 h-9 mr-3 md:mr-4 inline-flex items-center justify-center rounded-full border-solid border-[3px] border-blue-primary">
+    <Link href={link} target="blank" className="w-9 h-9 mr-3 md:mr-4 inline-flex items-center justify-center rounded-full border-solid border-[3px] border-blue-primary">
       <span>
         {icon}
       </span>
