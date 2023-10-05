@@ -23,6 +23,13 @@ const projectList: IProjectCardProps[] = [
     link: 'https://labsanimal.com.br/site/'
   },
   {
+    name: "RA+ Homepage",
+    description: "Trabalhei na equipa do Reclame Aqui com um time ágil utilizando SCRUM",
+    thumb: "/project-03.png",
+    technologies: ['SCRUM', 'GIT'],
+    link: 'https://mais.reclameaqui.com.br/'
+  },
+  {
     name: "Libercard Homepage",
     description: "Desenvolvimento de landing page para a empresa de benefícios Libercard, e desenvolvimento de CMS para gerenciamento de conteúdo",
     thumb: "/project-01.png",
@@ -37,11 +44,11 @@ const projectList: IProjectCardProps[] = [
     link: 'https://labsanimal.com.br/site/'
   },
   {
-    name: "LabsAnimal Homepage",
-    description: "O Laboratório de Patologia Animal SANIMAL foi fundado em 2000, por iniciativa do Médico Veterinário João de Brito Neto, e tem por finalidade atuar nas mais diferentes áreas de diagnóstico para trazer aos nossos clientes",
-    thumb: "/project-02.png",
-    technologies: ['Vue.js', 'Wordpress'],
-    link: 'https://labsanimal.com.br/site/'
+    name: "RA+ Homepage",
+    description: "Trabalhei na equipa do Reclame Aqui com um time ágil utilizando SCRUM",
+    thumb: "/project-03.png",
+    technologies: ['SCRUM', 'GIT'],
+    link: 'https://mais.reclameaqui.com.br/'
   },
 ]
 
