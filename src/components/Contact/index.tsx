@@ -19,7 +19,7 @@ export const Contact = () => {
           </h3>
           <div className="w-full md:w-auto flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <Button onClick={() => router.push('mailto:igor.ssqwe@gmail.com')}><span className="text-2xl">E-mail</span></Button>
-            <Button onClick={() => window.open('https://wa.me/55985706621', '_blank')} type="outlined"><span className="text-2xl">Whatsapp</span></Button>
+            <Button onClick={() => window.open('https://wa.me/5585985706621', '_blank')} type="outlined" color="light"><span className="text-2xl">Whatsapp</span></Button>
           </div>
         </div>
       </Container>
