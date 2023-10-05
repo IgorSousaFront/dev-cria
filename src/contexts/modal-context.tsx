@@ -14,7 +14,7 @@ interface IModalContextProviderProps {
 export const ModalContext = createContext<IModalContextProps>({} as IModalContextProps)
 
 export const ModalProvider = ({children}: IModalContextProviderProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const toggleVisibility = () => {
     setIsOpen(!isOpen)
