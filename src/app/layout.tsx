@@ -31,7 +31,7 @@ export default function RootLayout({
     <ModalProvider>
       <html lang="en">
         <body className={`${robotoCondensed.className} bg-purple-base dark:bg-dark-purple-base`}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light">
             <Header />
             {children}
           </ThemeProvider>
