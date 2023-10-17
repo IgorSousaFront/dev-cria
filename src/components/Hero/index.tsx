@@ -81,7 +81,7 @@ export const Hero = () => {
         )}
       </div>
       <Modal isOpen={isModalOpen}>
-        <SectionTitle color="primary">Baixe meu currículo</SectionTitle>
+        <SectionTitle color="primary">Baixe meu currículo.</SectionTitle>
         <div className="my-4 mb-5">
           <p className="mb-2 text-center text-font-light dark:text-white">Currículo em português</p>
           <Button onClick={() => window.open('/curriculo-igor-sousa.pdf', '_blank')}><HiOutlineDocumentDownload size={28} className="mr-2"/> Baixar</Button>
