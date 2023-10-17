@@ -20,6 +20,7 @@ import { HiOutlineDocumentDownload } from 'react-icons/hi'
 import { ModalContext } from "@/contexts/modal-context"
 
 import { useTheme } from "next-themes"
+import { PageOverlay } from "../PageOverlay"
 
 const socialListItems: ISocialIconsProps[] = [
   {
@@ -36,9 +37,64 @@ const socialListItems: ISocialIconsProps[] = [
   },
 ]
 
+interface IheroDetailsProps {
+  icon: string
+  size: number
+  position: {
+    top?: number
+    left?: number
+    right?: number
+    bottom?: number
+  }
+}
+
+const heroDetails: IheroDetailsProps[] = [
+  {
+    icon: '/hero-icons-01.svg',
+    size: 60,
+    position: {
+      top: 132,
+      left: 10,
+    }
+  },
+  {
+    icon: '/hero-icons-02.svg',
+    size: 113,
+    position: {
+      top: 38,
+      right: 40,
+    }
+  },
+  {
+    icon: '/hero-icons-03.svg',
+    size: 80,
+    position: {
+      top: 280,
+      left: 80,
+    }
+  },
+  {
+    icon: '/hero-icons-04.svg',
+    size: 50,
+    position: {
+      top: 500,
+      left: 15,
+    }
+  },
+  {
+    icon: '/hero-icons-05.svg',
+    size: 140,
+    position: {
+      right: -10,
+      bottom: 60,
+    }
+  },
+]
+
 export const Hero = () => {
   const router = useRouter()
   const { isOpen: isModalOpen, toggleVisibility: toggleModal } = useContext(ModalContext)
+  const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false)
   const [heroImage, setHeroImage] = useState<string | undefined>(undefined)
   const { theme } = useTheme()
 
@@ -49,6 +105,12 @@ export const Hero = () => {
       setHeroImage('/banner__image-dark.png')
     }
   }, [theme])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOverlayOpen(true)
+    }, 1000)
+  }, [])
 
   return (
     <Container>
@@ -69,19 +131,38 @@ export const Hero = () => {
           </div>
         </div>
         {heroImage ? (
-          <Image
-            className="mix-blend-luminosity hidden lg:block"
-            src={heroImage}
-            alt="Imagem do desenvolvedor"
-            width={500}
-            height={583}
-          />
+          <div className="relative hidden lg:block max-w-full w-[500px] h-[250px] lg:h-[583px]">
+            <Image
+              className="cursor-pointer mix-blend-luminosity object-contain object-right-bottom"
+              src={heroImage}
+              alt="Imagem do desenvolvedor"
+              onClick={() => setIsOverlayOpen(true)}
+              fill
+            />
+            {heroDetails.map((icon, i) => (
+              <Image
+                key={i}
+                src={icon.icon}
+                width={icon.size}
+                height={icon.size}
+                alt={icon.icon}
+                className="absolute"
+                style={{
+                  top: icon.position.top ? `${icon.position.top}px` : 'initial',
+                  left: icon.position.left ? `${icon.position.left}px` : 'initial',
+                  right: icon.position.right ? `${icon.position.right}px` : 'initial',
+                  bottom: icon.position.bottom ? `${icon.position.bottom}px` : 'initial',
+                }}
+              />
+            ))}
+          </div>
         ) : (
-          <div className="h-[511px] w-[500px] hidden lg:block"></div>
+          <div className="lg:h-[583px] w-[500px] hidden lg:block"></div>
         )}
       </div>
       <Modal isOpen={isModalOpen}>
-        <SectionTitle color="primary">Baixe meu currículo</SectionTitle>
+        {/* <SectionTitle color="primary">Baixe meu currículo</SectionTitle> */}
+        <h3 className="text-xl lg:text-[30px] font-bold text-center mb-4 text-font-light dark:text-white">Baixe meu currículo</h3>
         <div className="my-4 mb-5">
           <p className="mb-2 text-center text-font-light dark:text-white">Currículo em português</p>
           <Button><HiOutlineDocumentDownload size={28} className="mr-2"/> Baixar</Button>
@@ -91,6 +172,7 @@ export const Hero = () => {
           <Button><HiOutlineDocumentDownload size={28} className="mr-2"/> Download</Button>
         </div>
       </Modal>
+      <PageOverlay isOpen={isOverlayOpen} onClose={() => setIsOverlayOpen(false)} />
     </Container>
   )
 }

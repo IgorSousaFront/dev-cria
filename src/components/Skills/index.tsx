@@ -1,66 +1,92 @@
 'use client'
 
 // React
-import { useContext } from "react"
+import { useContext, useState } from "react"
 
 // Components
 import { Container } from "@/components/Container"
 import { SectionTitle } from "../Title"
-import { SkillLoader, ISkillLoaderProps } from "../SkillLoader"
 import { Button } from "../Button"
+import { SkillCard, ISkillCardProps } from "../SkillCard"
+
+// Icons
+import {
+  BiLogoReact,
+  BiLogoJavascript,
+  BiLogoHtml5,
+  BiLogoCss3,
+  BiLogoVuejs,
+  BiLogoGit,
+  BiLogoTypescript,
+  BiLogoNodejs,
+  BiLogoSass
+} from "react-icons/bi"
+
+import { DiScrum } from "react-icons/di"
 
 // Contexts
 import { ModalContext } from "@/contexts/modal-context"
 import { useTheme } from "next-themes"
 
-const skillList: ISkillLoaderProps[] = [
+const skillList: ISkillCardProps[] = [
   {
-    label: 'Typescript',
-    percent: 85
+    name: 'Typescript',
+    icon: BiLogoTypescript
   },
   {
-    label: 'React',
-    percent: 80
+    name: 'Javascript',
+    icon: BiLogoJavascript
   },
   {
-    label: 'HTML',
-    percent: 90
+    name: 'React',
+    icon: BiLogoReact,
   },
   {
-    label: 'CSS',
-    percent: 90
+    name: 'Vue.Js',
+    icon: BiLogoVuejs,
   },
   {
-    label: 'GIT',
-    percent: 65
+    name: 'HTML',
+    icon: BiLogoHtml5,
   },
   {
-    label: 'SCRUM',
-    percent: 85
+    name: 'GIT',
+    icon: BiLogoGit,
   },
   {
-    label: 'Node',
-    percent: 45
+    name: 'CSS',
+    icon: BiLogoCss3
   },
   {
-    label: 'Vue',
-    percent: 60
+    name: 'Sass',
+    icon: BiLogoSass
+  },
+  {
+    name: 'Node',
+    icon: BiLogoNodejs
+  },
+  {
+    name: 'SCRUM',
+    icon: DiScrum
   },
 ]
 
 export const Skills = () => {
   const { toggleVisibility: toggleModal } = useContext(ModalContext)
+
   const { theme } = useTheme()
 
   return (
     <section id="habilidades" className="w-auto mx-5 md:w-[95vw] py-11 md:mx-auto bg-white dark:bg-dark-bg shadow-lg z-40 relative">
       <Container>
         <SectionTitle color="primary">Habilidades</SectionTitle>
-        <div className="flex gap-y-5 flex-wrap">
+        <div className="flex items-center gap-4 justify-center flex-wrap">
           {skillList.map((skill, index) => (
-            <div className="w-full md:w-2/4 px-3" key={index}>
-              <SkillLoader label={skill.label} percent={skill.percent}/>
-            </div>
+            <SkillCard
+              key={index}
+              name={skill.name}
+              icon={skill.icon}
+            />
           ))}
         </div>
         <div className="flex items-center justify-center pt-14 w-full md:w-60 mx-auto">
