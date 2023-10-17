@@ -28,7 +28,7 @@ export const Button = ({
   }
 
   return (
-    <button onClick={onClick && onClick} className={`w-full rounded-full py-2 px-8 border-[3px] border-solid uppercase flex items-center justify-center ${setType()}`}>
+    <button onClick={onClick && onClick} className={`w-full rounded-full py-2 px-6 border-[3px] border-solid uppercase flex items-center justify-center ${setType()}`}>
       {children}
     </button>
   )

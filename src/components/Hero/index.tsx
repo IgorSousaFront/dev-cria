@@ -84,11 +84,11 @@ export const Hero = () => {
         <SectionTitle color="primary">Baixe meu currículo</SectionTitle>
         <div className="my-4 mb-5">
           <p className="mb-2 text-center text-font-light dark:text-white">Currículo em português</p>
-          <Button><HiOutlineDocumentDownload size={28} className="mr-2"/> Baixar</Button>
+          <Button onClick={() => window.open('/curriculo-igor-sousa.pdf', '_blank')}><HiOutlineDocumentDownload size={28} className="mr-2"/> Baixar</Button>
         </div>
         <div className="my-4">
           <p className="mb-2 text-center text-font-light dark:text-white">Resume in english</p>
-          <Button><HiOutlineDocumentDownload size={28} className="mr-2"/> Download</Button>
+          <Button onClick={() => window.open('resume-igor-sousa.pdf', '_blank')}><HiOutlineDocumentDownload size={28} className="mr-2"/> Download</Button>
         </div>
       </Modal>
     </Container>
