@@ -1,7 +1,3 @@
-'use client'
-
-import { useState } from 'react'
-
 // Components
 import { Container } from "@/components/Container"
 import { ToggleTheme } from "../ToggleTheme"
